@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalendarz</title>
+    <style>
+        #container{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        #box{
+            height: 500px;
+            width: 350px;
+            text-align: center;
+            border: 15px solid black;
+            font-size: 30px;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id='container'>
+        <div id="box">
+            <h1 id="m">Miesiąc</h1> <br>
+            <h1 id="nr">Numer dnia</h1> <br>
+            <h1 id="d">Dzień</h1>
+        </div>
+    </div>
+
+    <script>
+        let miesiace = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
+        let dni = ["poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela"];
+        let data=new Date();
+
+        let mies = data.getMonth();
+        let nr_dnia = data.getDate();
+        let dzien = data.getDay();
+
+        document.getElementById("m").innerHTML = miesiace[mies];
+        document.getElementById("nr").innerHTML = nr_dnia;
+        document.getElementById("d").innerHTML = dni[dzien-1];
+    </script>
+
+</body>
+</html>
